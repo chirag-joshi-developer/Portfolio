@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-surface: #171717;
+  --color-accent: #ffd60a;
+  --color-accent-hover: #e6c009;
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 214, 10, 0.12), transparent 28rem),
+    radial-gradient(circle at 80% 0%, rgba(255, 214, 10, 0.08), transparent 24rem),
+    #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #ffd60a;
+  color: #0a0a0a;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: #ffd60a;
+}
+
+.markdown-content {
+  color: #d4d4d8;
+  line-height: 1.75;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.markdown-content h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.75rem;
+}
+
+.markdown-content p,
+.markdown-content ul {
+  margin-top: 1rem;
+}
+
+.markdown-content ul {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.markdown-content li + li {
+  margin-top: 0.4rem;
+}
+
+.markdown-content a {
+  color: #ffd60a;
+}

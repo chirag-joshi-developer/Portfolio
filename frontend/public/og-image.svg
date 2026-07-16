@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+  <circle cx="950" cy="120" r="180" fill="#FFD60A" opacity="0.16"/>
+  <rect x="70" y="70" width="1060" height="490" rx="40" fill="#171717" stroke="#FFD60A" stroke-width="6"/>
+  <text x="110" y="250" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="92" font-weight="700">Chirag</text>
+  <text x="110" y="340" fill="#FFD60A" font-family="Arial, sans-serif" font-size="44" font-weight="700">Software Engineer Portfolio</text>
+  <text x="110" y="420" fill="#A3A3A3" font-family="Arial, sans-serif" font-size="32">Projects - Skills - Experience - Certificates</text>
+</svg>

@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+.env
+.env.production
+.venv/
+venv/
+media/
+staticfiles/
+
+node_modules/
+dist/
+.vite/
+
+.DS_Store
+Thumbs.db
+
+# Local/dev compose — production uses docker-compose.prod.yml
+docker-compose.yml
+docker-compose.override.yml
+README.md
