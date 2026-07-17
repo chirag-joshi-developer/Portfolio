@@ -8,6 +8,8 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 3000,
+    // Allow Cloudflare / domain Host headers (default Vite only allows localhost → 403).
+    allowedHosts: true,
     // Same-origin /api and /media in the browser; Vite forwards to Django.
     // Avoids CORS and localhost HTTPS-upgrade issues on project detail pages.
     proxy: {
