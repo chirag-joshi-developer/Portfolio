@@ -36,7 +36,7 @@ class ProfileAdmin(admin.ModelAdmin):
         ("Hero", {"fields": ("full_name", "tagline", "roles", "intro")}),
         ("About", {"fields": ("bio", "profile_photo", "resume_pdf")}),
         ("Quick facts", {"fields": ("email", "location", "status", "years_experience")}),
-        ("Social links", {"fields": ("linkedin_url", "github_url", "twitter_url")}),
+        ("Social links", {"fields": ("linkedin_url", "github_url", "mobile_number")}),
     )
     list_display = ("full_name", "email", "location", "status")
 

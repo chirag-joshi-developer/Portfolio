@@ -59,13 +59,6 @@ export function getCertificates() {
   return request('/api/certificates/')
 }
 
-export function submitContact(payload) {
-  return request('/api/contact/', {
-    method: 'POST',
-    body: JSON.stringify(payload),
-  })
-}
-
 export async function getPortfolioData() {
   const [profile, skills, interests, projects, experience, education, certificates] = await Promise.all([
     getProfile(),

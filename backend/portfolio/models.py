@@ -37,7 +37,11 @@ class Profile(models.Model):
     years_experience = models.CharField(max_length=50, blank=True)
     linkedin_url = models.URLField(blank=True)
     github_url = models.URLField(blank=True)
-    twitter_url = models.URLField(blank=True)
+    mobile_number = models.CharField(
+        max_length=20,
+        blank=True,
+        help_text="Include country code, e.g. +91 98765 43210.",
+    )
 
     class Meta:
         verbose_name = "Profile / About"

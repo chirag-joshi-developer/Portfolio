@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaEnvelope, FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { HiArrowDown } from 'react-icons/hi'
 import { useTypewriter } from '../hooks/useTypewriter.js'
 import ResumeDropdown from './ResumeDropdown.jsx'
@@ -11,7 +11,6 @@ function Hero({ profile }) {
   const socials = [
     profile?.github_url && { href: profile.github_url, label: 'GitHub', icon: FaGithub },
     profile?.linkedin_url && { href: profile.linkedin_url, label: 'LinkedIn', icon: FaLinkedin },
-    profile?.twitter_url && { href: profile.twitter_url, label: 'Twitter / X', icon: FaXTwitter },
     profile?.email && { href: `mailto:${profile.email}`, label: 'Email', icon: FaEnvelope },
   ].filter(Boolean)
 

@@ -1,13 +1,11 @@
-from rest_framework import mixins, status, viewsets
+from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.throttling import AnonRateThrottle
 from rest_framework.views import APIView
 
 from .models import Certificate, Education, Experience, Interest, Profile, Project, Skill
 from .serializers import (
     CertificateSerializer,
-    ContactMessageSerializer,
     EducationSerializer,
     ExperienceSerializer,
     InterestSerializer,
@@ -15,10 +13,6 @@ from .serializers import (
     ProjectSerializer,
     SkillSerializer,
 )
-
-
-class ContactRateThrottle(AnonRateThrottle):
-    scope = "contact"
 
 
 class ProfileView(APIView):
@@ -74,13 +68,3 @@ class EducationViewSet(viewsets.ReadOnlyModelViewSet):
 class CertificateViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Certificate.objects.all()
     serializer_class = CertificateSerializer
-
-
-class ContactMessageView(mixins.CreateModelMixin, viewsets.GenericViewSet):
-    serializer_class = ContactMessageSerializer
-    throttle_classes = [ContactRateThrottle]
-
-    def create(self, request, *args, **kwargs):
-        if request.data.get("website"):
-            return Response({"detail": "Message received."}, status=status.HTTP_202_ACCEPTED)
-        return super().create(request, *args, **kwargs)

@@ -135,7 +135,6 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_THROTTLE_RATES": {
         "anon": "60/minute",
-        "contact": "5/hour",
     },
 }
 

@@ -52,7 +52,7 @@ class Command(BaseCommand):
                 "years_experience": "Early career",
                 "linkedin_url": "https://www.linkedin.com/",
                 "github_url": "https://github.com/",
-                "twitter_url": "",
+                "mobile_number": "",
             },
         )
         if not profile.profile_photo:

@@ -2,7 +2,6 @@ from rest_framework import serializers
 
 from .models import (
     Certificate,
-    ContactMessage,
     Education,
     Experience,
     Interest,
@@ -65,7 +64,7 @@ class ProfileSerializer(AbsoluteMediaMixin, serializers.ModelSerializer):
             "quick_facts",
             "linkedin_url",
             "github_url",
-            "twitter_url",
+            "mobile_number",
         ]
 
     def get_profile_photo_url(self, obj):
@@ -209,13 +208,3 @@ class CertificateSerializer(AbsoluteMediaMixin, serializers.ModelSerializer):
         return self.get_media_url(obj, "certificate_image")
 
 
-class ContactMessageSerializer(serializers.ModelSerializer):
-    website = serializers.CharField(required=False, allow_blank=True, write_only=True)
-
-    class Meta:
-        model = ContactMessage
-        fields = ["name", "email", "subject", "message", "website"]
-
-    def create(self, validated_data):
-        validated_data.pop("website", None)
-        return super().create(validated_data)
