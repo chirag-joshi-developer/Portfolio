@@ -7,7 +7,9 @@ services:
       MYSQL_USER: ${MYSQL_USER:-portfolio_user}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-portfolio_password}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password}
-    # No host ports — MySQL is only reachable on the internal Docker network.
+    # Bound to VPS localhost only — use SSH tunnel from HeidiSQL; not exposed to the internet.
+    ports:
+      - "127.0.0.1:3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
