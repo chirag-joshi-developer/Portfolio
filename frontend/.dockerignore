@@ -5,3 +5,8 @@ npm-debug.log
 .env
 .env.production
 *.md
+Dockerfile
+.dockerignore
+nginx.conf
+.gitignore
+.oxlintrc.json
