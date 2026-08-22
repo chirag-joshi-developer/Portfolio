@@ -7,6 +7,5 @@ npm-debug.log
 *.md
 Dockerfile
 .dockerignore
-nginx.conf
 .gitignore
 .oxlintrc.json
