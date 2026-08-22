@@ -68,20 +68,15 @@ services:
   frontend:
     build:
       context: ./frontend
-      target: dev
+      target: production
     restart: unless-stopped
     depends_on:
       - backend
     environment:
       # Same-origin via nginx; leave empty unless the API is on another host.
       VITE_API_URL: ${VITE_API_URL:-}
-    volumes:
-      # Same bind mounts as local so you can edit the frontend live on the server.
-      - ./frontend:/app
-      - frontend_node_modules:/app/node_modules
     expose:
-      - "3000"
-    command: npm run dev -- --host 0.0.0.0
+      - "80"
 
   nginx:
     image: nginx:1.29-alpine
@@ -111,4 +106,3 @@ networks:
 volumes:
   mysql_data:
   backend_media:
-  frontend_node_modules:
